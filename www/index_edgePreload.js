@@ -59,10 +59,12 @@ if (AdobeEdge.bootstrapLoading) { signaledLoading = true; AdobeEdge.loadResource
 
 loadResources(aLoader, doDelayLoad);
 
-var plSTF="height",ctrPlS="both",minPlW="0",maxPlW=undefined,plWidth="480px",plHeight="640px";
+var plSTF="both",ctrPlS="both",minPlW="0",maxPlW=undefined,plWidth="480px",plHeight="640px";
 
 preContent={dom: [ ]};//simpleContent
 
-dlContent={dom: [ ]};//simpleContent
+dlContent={
+    dom: [
+]};//simpleContent
 
 })( "smgroup-786");
