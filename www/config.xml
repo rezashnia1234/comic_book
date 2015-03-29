@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "ir.smgroup.khande"
+        id        = "ir.smgroup.comic"
         version   = "1.0.11">
 		
 		
-    <name>یه قاچ خنده</name>
-    <description>یه قاچ خنده</description>
+    <name>تست</name>
+    <description>تست</description>
     <author href="http://smgroup.ir" email="info@smgroup.ir">Sorush Mehr Rezvan</author>
 		
     <!--
