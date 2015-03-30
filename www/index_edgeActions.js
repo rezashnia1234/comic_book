@@ -269,11 +269,12 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
 
       Symbol.bindElementAction(compId, symbolName, "${_action}", "swiperight", function(sym, e) {
          // insert code to be run when a swiperight event occurs on an element
-         if(sym.$("#Stage").data("playing_animation"))
-         	sym.$("#Stage").data("run_next_animation",true);
-         else
-         	sym.$("#Stage").data("run_next_animation",false);
-         sym.play();
+         	if(sym.$("#Stage").data("playing_animation"))
+         		sym.$("#Stage").data("run_next_animation",true);
+         	else
+         		sym.$("#Stage").data("run_next_animation",false);
+         		
+         	sym.play();
 
       });
       //Edge binding end
@@ -447,6 +448,50 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
 
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 19566, function(sym, e) {
          sym.$("#Stage").data("playing_animation",true);
+
+      });
+      //Edge binding end
+
+      Symbol.bindElementAction(compId, symbolName, "${_blank--0}", "click", function(sym, e) {
+         	if(sym.$("#Stage").data("playing_animation"))
+         		sym.$("#Stage").data("run_next_animation",true);
+         	else
+         		sym.$("#Stage").data("run_next_animation",false);
+         	sym.play();
+
+      });
+      //Edge binding end
+
+      Symbol.bindElementAction(compId, symbolName, "${_blank--0}", "touchend", function(sym, e) {
+         	if(sym.$("#Stage").data("playing_animation"))
+         		sym.$("#Stage").data("run_next_animation",true);
+         	else
+         		sym.$("#Stage").data("run_next_animation",false);
+         	sym.play();
+
+      });
+      //Edge binding end
+
+      Symbol.bindElementAction(compId, symbolName, "${_blank--0Copy}", "click", function(sym, e) {
+         		if(sym.$("#Stage").data("playing_animation"))
+         			sym.$("#Stage").data("run_next_animation",true);
+         		else
+         			sym.$("#Stage").data("run_next_animation",false);
+         	
+         		//if(!sym.$("#Stage").data("is_it_at_start"))
+         			sym.playReverse();
+
+      });
+      //Edge binding end
+
+      Symbol.bindElementAction(compId, symbolName, "${_blank--0Copy}", "touchend", function(sym, e) {
+         		if(sym.$("#Stage").data("playing_animation"))
+         			sym.$("#Stage").data("run_next_animation",true);
+         		else
+         			sym.$("#Stage").data("run_next_animation",false);
+         	
+         		//if(!sym.$("#Stage").data("is_it_at_start"))
+         			sym.playReverse();
 
       });
       //Edge binding end
