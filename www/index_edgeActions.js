@@ -91,7 +91,10 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 5994, function(sym, e) {
          // insert code here
          if(!sym.$("#Stage").data("run_next_animation"))
+         {
          	sym.stop();
+         	sym.getSymbol("page_1th").play("frame_5");
+         }
          else
          	sym.$("#Stage").data("run_next_animation",false);
          
@@ -152,15 +155,21 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
          
          	// Go to a label or specific time and stop. For example:
          	// sym.stop(500); or sym.stop("myLabel");
-         	
+         
          	sym.getSymbol("page_1th").stop(0);
-         	
+         
+         	//sym.getSymbol("page_1th").getSymbol("F01").getSymbol("snow_motionCopy").stop(0);
+         	//sym.getSymbol("page_1th").getSymbol("F01").getSymbol("snow_motion").stop(0);
+         	//sym.getSymbol("page_1th").getSymbol("F01").getSymbol("snow_motionCopy").stop(0);
+         	//sym.getSymbol("page_1th").getSymbol("F01").getSymbol("snow_motionCopy2").stop(0);
+         	//sym.getSymbol("page_1th").getSymbol("F01").getSymbol("snow_motion").getSymbol("snow_23").stop(0);
+         
+         	sym.getSymbol("page_1th").getSymbol("F01").stop(0);
+         
          	sym.getSymbol("page_1th").getSymbol("P01F03").stop(0);
-         	sym.getSymbol("page_1th").getSymbol("F01").getSymbol("snow_motionCopy").stop(0);
-         	sym.getSymbol("page_1th").getSymbol("F01").getSymbol("snow_motion").stop(0);
-         	sym.getSymbol("page_1th").getSymbol("F01").getSymbol("snow_motionCopy").stop(0);
-         	sym.getSymbol("page_1th").getSymbol("F01").getSymbol("snow_motionCopy2").stop(0);
-         	sym.getSymbol("page_1th").getSymbol("F01").getSymbol("snow_motion").getSymbol("snow_23").stop(0);
+         
+         	sym.getSymbol("page_1th").getSymbol("P01F05").stop(0);
+         
          
          	sym.getSymbol("page_1th").getSymbol("F06_mother3").stop(0);
          	sym.getSymbol("page_1th").getSymbol("F06_mother3").getSymbol("P01F06-sarbaz").stop(0);
@@ -564,11 +573,7 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
    //Edge symbol: 'main'
    (function(symbolName) {   
    
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
-         // insert code here
-
-      });
-      //Edge binding end
+      
 
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 2000, function(sym, e) {
          // insert code here
@@ -606,13 +611,26 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
       });
       //Edge binding end
 
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 913, function(sym, e) {
-         // insert code here
-      });
-      //Edge binding end
+      
 
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 8500, function(sym, e) {
          sym.getComposition().getStage().getSymbol("page_1th").stop();
+         
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 10500, function(sym, e) {
+         sym.getComposition().getStage().getSymbol("page_1th").stop();
+         
+         sym.getComposition().getStage().getSymbol("page_1th").getSymbol("P01F05").play(0);
+         
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 7080, function(sym, e) {
+         sym.getComposition().getStage().getSymbol("page_1th").getSymbol("P01F03").play(0);
 
       });
       //Edge binding end
@@ -811,5 +829,13 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
    
    })("p01f06backofsarbaz");
    //Edge symbol end:'p01f06backofsarbaz'
+
+   //=========================================================
+   
+   //Edge symbol: 'P01F05'
+   (function(symbolName) {   
+   
+   })("P01F05");
+   //Edge symbol end:'P01F05'
 
 })(jQuery, AdobeEdge, "smgroup-786");
