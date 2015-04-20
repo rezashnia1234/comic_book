@@ -94,6 +94,16 @@ var symbols = {
                 ["style", "left", '441px'],
                 ["style", "width", '39px']
             ],
+            "${_page_2th}": [
+                ["style", "top", '12px'],
+                ["transform", "scaleX", '1'],
+                ["transform", "scaleY", '1'],
+                ["style", "display", 'none'],
+                ["style", "height", '617px'],
+                ["style", "opacity", '0.7'],
+                ["style", "left", '-433px'],
+                ["style", "width", '433px']
+            ],
             "${_page_1th}": [
                 ["style", "top", '0px'],
                 ["transform", "scaleY", '0.98798'],
@@ -113,16 +123,6 @@ var symbols = {
                 ["style", "height", '42px'],
                 ["style", "left", '0px'],
                 ["style", "width", '39px']
-            ],
-            "${_page_2th}": [
-                ["style", "top", '12px'],
-                ["transform", "scaleX", '1'],
-                ["transform", "scaleY", '1'],
-                ["style", "display", 'none'],
-                ["style", "height", '617px'],
-                ["style", "opacity", '0.7'],
-                ["style", "left", '-433px'],
-                ["style", "width", '433px']
             ],
             "${_help}": [
                 ["style", "top", '0px'],
@@ -228,9 +228,10 @@ var symbols = {
     content: {
             dom: [
                 {
-                    id: 'start',
-                    type: 'image',
                     rect: ['0px', '0px', '465px', '640px', 'auto', 'auto'],
+                    id: 'start',
+                    opacity: 1,
+                    type: 'image',
                     fill: ['rgba(0,0,0,0)', 'images/start.jpg', '0px', '0px']
                 },
                 {
@@ -305,11 +306,12 @@ var symbols = {
             ],
             "${_P01F05}": [
                 ["style", "display", 'none'],
-                ["style", "opacity", '0']
+                ["style", "opacity", '1']
             ],
             "${_start}": [
-                ["style", "height", '640px'],
                 ["style", "top", '0px'],
+                ["style", "height", '640px'],
+                ["style", "opacity", '1'],
                 ["style", "left", '0px'],
                 ["style", "width", '465px']
             ],
@@ -323,7 +325,7 @@ var symbols = {
         "Default Timeline": {
             fromState: "Base State",
             toState: "",
-            duration: 10577,
+            duration: 11000,
             autoPlay: false,
             labels: {
                 "frame_1": 1000,
@@ -332,26 +334,30 @@ var symbols = {
                 "frame_5": 9000
             },
             timeline: [
+                { id: "eid549", tween: [ "style", "${_P01F03}", "opacity", '1', { fromValue: '0'}], position: 7000, duration: 1500 },
+                { id: "eid609", tween: [ "style", "${_P01F05}", "opacity", '1', { fromValue: '1'}], position: 9000, duration: 0 },
+                { id: "eid610", tween: [ "style", "${_P01F05}", "opacity", '1', { fromValue: '1'}], position: 10500, duration: 0 },
+                { id: "eid319", tween: [ "style", "${_F06_mother3}", "opacity", '1', { fromValue: '0'}], position: 4000, duration: 1500, easing: "easeInOutQuart" },
+                { id: "eid261", tween: [ "style", "${_F01}", "display", 'none', { fromValue: 'none'}], position: 1000, duration: 0 },
+                { id: "eid262", tween: [ "style", "${_F01}", "display", 'block', { fromValue: 'none'}], position: 1058, duration: 0 },
+                { id: "eid612", tween: [ "style", "${_F01}", "display", 'block', { fromValue: 'block'}], position: 2000, duration: 0 },
+                { id: "eid611", tween: [ "style", "${_F01}", "display", 'none', { fromValue: 'block'}], position: 2057, duration: 0 },
+                { id: "eid503", tween: [ "style", "${_P01F05}", "display", 'none', { fromValue: 'none'}], position: 0, duration: 0 },
+                { id: "eid499", tween: [ "style", "${_P01F05}", "display", 'block', { fromValue: 'none'}], position: 9000, duration: 0 },
+                { id: "eid500", tween: [ "style", "${_P01F05}", "display", 'block', { fromValue: 'block'}], position: 10500, duration: 0 },
+                { id: "eid504", tween: [ "style", "${_P01F05}", "display", 'none', { fromValue: 'block'}], position: 10577, duration: 0 },
                 { id: "eid315", tween: [ "style", "${_F06_mother3}", "display", 'none', { fromValue: 'none'}], position: 0, duration: 0, easing: "easeInOutQuart" },
                 { id: "eid314", tween: [ "style", "${_F06_mother3}", "display", 'none', { fromValue: 'none'}], position: 3918, duration: 0, easing: "easeInOutQuart" },
                 { id: "eid313", tween: [ "style", "${_F06_mother3}", "display", 'block', { fromValue: 'none'}], position: 4000, duration: 0, easing: "easeInOutQuart" },
                 { id: "eid318", tween: [ "style", "${_F06_mother3}", "display", 'block', { fromValue: 'block'}], position: 5500, duration: 0, easing: "easeInOutQuart" },
                 { id: "eid320", tween: [ "style", "${_F06_mother3}", "display", 'none', { fromValue: 'block'}], position: 5577, duration: 0, easing: "easeInOutQuart" },
-                { id: "eid502", tween: [ "style", "${_P01F05}", "opacity", '1', { fromValue: '0'}], position: 9000, duration: 1500 },
-                { id: "eid319", tween: [ "style", "${_F06_mother3}", "opacity", '1', { fromValue: '0'}], position: 4000, duration: 1500, easing: "easeInOutQuart" },
-                { id: "eid261", tween: [ "style", "${_F01}", "display", 'none', { fromValue: 'none'}], position: 1000, duration: 0 },
-                { id: "eid262", tween: [ "style", "${_F01}", "display", 'block', { fromValue: 'none'}], position: 1058, duration: 0 },
-                { id: "eid549", tween: [ "style", "${_P01F03}", "opacity", '1', { fromValue: '0'}], position: 7000, duration: 1500 },
-                { id: "eid503", tween: [ "style", "${_P01F05}", "display", 'none', { fromValue: 'none'}], position: 0, duration: 0 },
-                { id: "eid499", tween: [ "style", "${_P01F05}", "display", 'block', { fromValue: 'none'}], position: 9000, duration: 0 },
-                { id: "eid500", tween: [ "style", "${_P01F05}", "display", 'block', { fromValue: 'block'}], position: 10500, duration: 0 },
-                { id: "eid504", tween: [ "style", "${_P01F05}", "display", 'none', { fromValue: 'block'}], position: 10577, duration: 0 },
                 { id: "eid384", tween: [ "style", "${_P01F03}", "display", 'none', { fromValue: 'none'}], position: 0, duration: 0 },
                 { id: "eid382", tween: [ "style", "${_P01F03}", "display", 'block', { fromValue: 'none'}], position: 7000, duration: 0 },
                 { id: "eid385", tween: [ "style", "${_P01F03}", "display", 'block', { fromValue: 'block'}], position: 8500, duration: 0 },
                 { id: "eid387", tween: [ "style", "${_P01F03}", "display", 'none', { fromValue: 'block'}], position: 8619, duration: 0 },
                 { id: "eid264", tween: [ "style", "${_F01}", "opacity", '0', { fromValue: '1'}], position: 1000, duration: 58 },
-                { id: "eid266", tween: [ "style", "${_F01}", "opacity", '1', { fromValue: '0'}], position: 1058, duration: 942 }            ]
+                { id: "eid266", tween: [ "style", "${_F01}", "opacity", '1', { fromValue: '0'}], position: 1058, duration: 942 },
+                { id: "eid615", tween: [ "style", "${_F01}", "opacity", '0', { fromValue: '1'}], position: 2000, duration: 57 }            ]
         }
     }
 },
@@ -782,10 +788,10 @@ var symbols = {
                 ["style", "left", '80px'],
                 ["style", "width", '100px']
             ],
-            "${_snowCopy5}": [
+            "${_snowCopy24}": [
+                ["style", "top", '-1263px'],
                 ["style", "height", '240px'],
-                ["style", "top", '557px'],
-                ["style", "left", '80px'],
+                ["style", "left", '170px'],
                 ["style", "width", '100px']
             ],
             "${_snowCopy}": [
@@ -882,6 +888,12 @@ var symbols = {
                 ["style", "left", '0px'],
                 ["style", "width", '100px']
             ],
+            "${_snowCopy27}": [
+                ["style", "top", '-1038px'],
+                ["style", "height", '240px'],
+                ["style", "left", '170px'],
+                ["style", "width", '100px']
+            ],
             "${_snowCopy14}": [
                 ["style", "top", '-669px'],
                 ["style", "height", '240px'],
@@ -890,12 +902,6 @@ var symbols = {
             ],
             "${_snowCopy2}": [
                 ["style", "top", '12px'],
-                ["style", "height", '240px'],
-                ["style", "left", '170px'],
-                ["style", "width", '100px']
-            ],
-            "${_snowCopy27}": [
-                ["style", "top", '-1038px'],
                 ["style", "height", '240px'],
                 ["style", "left", '170px'],
                 ["style", "width", '100px']
@@ -924,15 +930,15 @@ var symbols = {
                 ["style", "left", '170px'],
                 ["style", "width", '100px']
             ],
-            "${_snowCopy24}": [
-                ["style", "top", '-1263px'],
-                ["style", "height", '240px'],
-                ["style", "left", '170px'],
-                ["style", "width", '100px']
-            ],
             "${_snowCopy3}": [
                 ["style", "height", '240px'],
                 ["style", "top", '112px'],
+                ["style", "left", '80px'],
+                ["style", "width", '100px']
+            ],
+            "${_snowCopy5}": [
+                ["style", "height", '240px'],
+                ["style", "top", '557px'],
                 ["style", "left", '80px'],
                 ["style", "width", '100px']
             ],
@@ -980,46 +986,41 @@ var symbols = {
                     fill: ['rgba(0,0,0,0)', 'images/frame/F01.jpg', '0px', '0px']
                 },
                 {
-                    display: 'block',
+                    id: 'snow_big',
                     type: 'rect',
-                    rect: ['-47', '-496', 'auto', 'auto', 'auto', 'auto'],
-                    id: 'snow_motion'
+                    rect: ['116', '-43', 'auto', 'auto', 'auto', 'auto']
                 },
                 {
-                    id: 'snow_motionCopy',
+                    id: 'snow_blour2',
                     type: 'rect',
-                    rect: ['-47', '-496', 'auto', 'auto', 'auto', 'auto']
-                },
-                {
-                    id: 'snow_motionCopy2',
-                    type: 'rect',
-                    rect: ['-47', '-496', 'auto', 'auto', 'auto', 'auto']
+                    rect: ['117', '-43', 'auto', 'auto', 'auto', 'auto']
                 },
                 {
                     id: 'F01-mask',
                     type: 'image',
                     rect: ['0px', '0px', '100%', '99.9%', 'auto', 'auto'],
                     fill: ['rgba(0,0,0,0)', 'images/frame/F01-mask.png', '0px', '0px']
+                },
+                {
+                    preload: 'auto',
+                    rect: ['82', '126', '320px', '45px', 'auto', 'auto'],
+                    source: ['media/5317_1334870182.mp3'],
+                    id: 'SnowAudio',
+                    type: 'audio',
+                    tag: 'audio'
                 }
             ],
             symbolInstances: [
             {
-                id: 'snow_motionCopy2',
-                symbolName: 'snow_motion',
+                id: 'snow_blour2',
+                symbolName: 'snow_blour',
                 autoPlay: {
 
                }
             },
             {
-                id: 'snow_motionCopy',
-                symbolName: 'snow_motion',
-                autoPlay: {
-
-               }
-            },
-            {
-                id: 'snow_motion',
-                symbolName: 'snow_motion',
+                id: 'snow_big',
+                symbolName: 'snow_big',
                 autoPlay: {
 
                }
@@ -1027,26 +1028,22 @@ var symbols = {
         },
     states: {
         "Base State": {
-            "${_snow_motionCopy}": [
-                ["style", "top", '-427px'],
-                ["style", "opacity", '1'],
-                ["style", "left", '-278px'],
-                ["transform", "rotateZ", '-60deg']
+            "${_snow_big}": [
+                ["style", "top", '-1672px'],
+                ["style", "opacity", '0.60162601626016'],
+                ["style", "left", '1025px'],
+                ["transform", "rotateZ", '29deg']
             ],
-            "${_F013}": [
-                ["style", "top", '0px'],
-                ["style", "height", '99.92%'],
-                ["style", "left", '0px'],
-                ["style", "width", '100%']
+            "${_snow_blour2}": [
+                ["style", "top", '-1733px'],
+                ["style", "opacity", '1'],
+                ["style", "left", '739px'],
+                ["transform", "rotateZ", '19deg']
             ],
             "${symbolSelector}": [
                 ["style", "height", '213px'],
                 ["style", "overflow", 'hidden'],
                 ["style", "width", '215px']
-            ],
-            "${_snow_motion}": [
-                ["style", "display", 'block'],
-                ["style", "opacity", '0.20000000298023224']
             ],
             "${_F01-mask}": [
                 ["style", "top", '0px'],
@@ -1054,11 +1051,11 @@ var symbols = {
                 ["style", "left", '0px'],
                 ["style", "width", '100%']
             ],
-            "${_snow_motionCopy2}": [
-                ["style", "top", '-414px'],
-                ["style", "opacity", '1'],
-                ["style", "left", '208px'],
-                ["transform", "rotateZ", '60deg']
+            "${_F013}": [
+                ["style", "top", '0px'],
+                ["style", "height", '99.92%'],
+                ["style", "left", '0px'],
+                ["style", "width", '100%']
             ]
         }
     },
@@ -1069,15 +1066,14 @@ var symbols = {
             duration: 60000,
             autoPlay: false,
             timeline: [
-                { id: "eid303", tween: [ "style", "${_snow_motionCopy}", "opacity", '1', { fromValue: '1'}], position: 0, duration: 0, easing: "easeInOutQuart" },
-                { id: "eid289", tween: [ "transform", "${_snow_motionCopy2}", "rotateZ", '60deg', { fromValue: '60deg'}], position: 0, duration: 0, easing: "easeInOutQuart" },
-                { id: "eid292", tween: [ "style", "${_snow_motionCopy2}", "top", '-414px', { fromValue: '-414px'}], position: 0, duration: 0, easing: "easeInOutQuart" },
-                { id: "eid300", tween: [ "style", "${_snow_motion}", "display", 'block', { fromValue: 'block'}], position: 0, duration: 0, easing: "easeInOutQuart" },
-                { id: "eid304", tween: [ "style", "${_snow_motionCopy2}", "opacity", '1', { fromValue: '1'}], position: 0, duration: 0, easing: "easeInOutQuart" },
-                { id: "eid296", tween: [ "style", "${_snow_motionCopy}", "top", '-427px', { fromValue: '-427px'}], position: 0, duration: 0, easing: "easeInOutQuart" },
-                { id: "eid290", tween: [ "transform", "${_snow_motionCopy}", "rotateZ", '-60deg', { fromValue: '-60deg'}], position: 0, duration: 0, easing: "easeInOutQuart" },
-                { id: "eid291", tween: [ "style", "${_snow_motionCopy2}", "left", '208px', { fromValue: '208px'}], position: 0, duration: 0, easing: "easeInOutQuart" },
-                { id: "eid294", tween: [ "style", "${_snow_motionCopy}", "left", '-278px', { fromValue: '-278px'}], position: 0, duration: 0, easing: "easeInOutQuart" }            ]
+                { id: "eid649", tween: [ "style", "${_snow_blour2}", "top", '-33px', { fromValue: '-1733px'}], position: 0, duration: 38151 },
+                { id: "eid628", tween: [ "style", "${_snow_big}", "top", '-53px', { fromValue: '-1672px'}], position: 0, duration: 60000 },
+                { id: "eid650", tween: [ "style", "${_snow_blour2}", "left", '89px', { fromValue: '739px'}], position: 0, duration: 38151 },
+                { id: "eid638", tween: [ "transform", "${_snow_blour2}", "rotateZ", '19deg', { fromValue: '19deg'}], position: 0, duration: 0 },
+                { id: "eid651", tween: [ "style", "${_snow_blour2}", "opacity", '1', { fromValue: '1'}], position: 0, duration: 0 },
+                { id: "eid627", tween: [ "style", "${_snow_big}", "left", '121px', { fromValue: '1025px'}], position: 0, duration: 60000 },
+                { id: "eid630", tween: [ "style", "${_snow_big}", "opacity", '0.60162601626016', { fromValue: '0.60162601626016'}], position: 0, duration: 0 },
+                { id: "eid626", tween: [ "transform", "${_snow_big}", "rotateZ", '29deg', { fromValue: '29deg'}], position: 0, duration: 0 }            ]
         }
     }
 },
@@ -1459,10 +1455,10 @@ var symbols = {
     content: {
             dom: [
                 {
-                    type: 'image',
-                    display: 'block',
                     rect: ['1px', '3px', '245px', '102px', 'auto', 'auto'],
                     id: 'P01F03S1',
+                    type: 'image',
+                    display: 'block',
                     fill: ['rgba(0,0,0,0)', 'images/P01F03/P01F03S1.png', '0px', '0px']
                 },
                 {
@@ -1725,6 +1721,14 @@ var symbols = {
                     type: 'image',
                     rect: ['0px', '209px', '465px', '228px', 'auto', 'auto'],
                     fill: ['rgba(0,0,0,0)', 'images/P01F05/F0501.png', '0px', '0px']
+                },
+                {
+                    preload: 'auto',
+                    rect: ['211', '95', '320px', '45px', 'auto', 'auto'],
+                    source: ['media/Download%20Sound%20Effects%20-%20Stockmusic.com_3.MP3'],
+                    id: 'rahraftan',
+                    type: 'audio',
+                    tag: 'audio'
                 }
             ],
             symbolInstances: [
@@ -1763,18 +1767,472 @@ var symbols = {
         "Default Timeline": {
             fromState: "Base State",
             toState: "",
-            duration: 10500,
+            duration: 9724,
             autoPlay: true,
             timeline: [
-                { id: "eid577", tween: [ "style", "${_F0501}", "opacity", '0', { fromValue: '1'}], position: 0, duration: 1146 },
-                { id: "eid582", tween: [ "style", "${_F0503}", "opacity", '1', { fromValue: '0.000000'}], position: 1682, duration: 193 },
-                { id: "eid583", tween: [ "style", "${_F0503}", "opacity", '0', { fromValue: '1'}], position: 1875, duration: 194 },
-                { id: "eid605", tween: [ "style", "${_F0502}", "top", '-5px', { fromValue: '-5px'}], position: 10500, duration: 0 },
-                { id: "eid588", tween: [ "style", "${_F0504}", "opacity", '1', { fromValue: '0.000000'}], position: 2166, duration: 116 },
-                { id: "eid589", tween: [ "style", "${_F0504}", "opacity", '0', { fromValue: '1'}], position: 2282, duration: 218 },
-                { id: "eid606", tween: [ "style", "${_F0503}", "top", '-5px', { fromValue: '-5px'}], position: 10500, duration: 0 },
-                { id: "eid608", tween: [ "style", "${_F0504}", "top", '-4px', { fromValue: '-4px'}], position: 10500, duration: 0 },
-                { id: "eid607", tween: [ "style", "${_F0501}", "top", '-5px', { fromValue: '-5px'}], position: 10500, duration: 0 }            ]
+                { id: "eid577", tween: [ "style", "${_F0501}", "opacity", '0', { fromValue: '1'}], position: 724, duration: 1146 },
+                { id: "eid582", tween: [ "style", "${_F0503}", "opacity", '1', { fromValue: '0.000000'}], position: 2406, duration: 193 },
+                { id: "eid583", tween: [ "style", "${_F0503}", "opacity", '0', { fromValue: '1'}], position: 2599, duration: 194 },
+                { id: "eid605", tween: [ "style", "${_F0502}", "top", '-5px', { fromValue: '-5px'}], position: 9724, duration: 0 },
+                { id: "eid588", tween: [ "style", "${_F0504}", "opacity", '1', { fromValue: '0.000000'}], position: 2890, duration: 116 },
+                { id: "eid589", tween: [ "style", "${_F0504}", "opacity", '0', { fromValue: '1'}], position: 3006, duration: 218 },
+                { id: "eid606", tween: [ "style", "${_F0503}", "top", '-5px', { fromValue: '-5px'}], position: 9724, duration: 0 },
+                { id: "eid608", tween: [ "style", "${_F0504}", "top", '-4px', { fromValue: '-4px'}], position: 9724, duration: 0 },
+                { id: "eid607", tween: [ "style", "${_F0501}", "top", '-5px', { fromValue: '-5px'}], position: 9724, duration: 0 }            ]
+        }
+    }
+},
+"snow_big": {
+    version: "4.0.0",
+    minimumCompatibleVersion: "4.0.0",
+    build: "4.0.0.359",
+    baseState: "Base State",
+    scaleToFit: "none",
+    centerStage: "none",
+    initialState: "Base State",
+    gpuAccelerate: false,
+    resizeInstances: false,
+    content: {
+            dom: [
+                {
+                    id: 'snow',
+                    type: 'image',
+                    rect: ['-7px', '-17px', '114px', '273px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow.png', '0px', '0px']
+                },
+                {
+                    id: 'snowCopy',
+                    type: 'image',
+                    rect: ['-114px', '-17px', '114px', '273px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow.png', '0px', '0px']
+                },
+                {
+                    id: 'snowCopy3',
+                    type: 'image',
+                    rect: ['-7px', '256px', '114px', '273px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow.png', '0px', '0px']
+                },
+                {
+                    id: 'snowCopy2',
+                    type: 'image',
+                    rect: ['-114px', '256px', '114px', '273px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow.png', '0px', '0px']
+                },
+                {
+                    id: 'snowCopy7',
+                    type: 'image',
+                    rect: ['-7px', '529px', '114px', '273px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow.png', '0px', '0px']
+                },
+                {
+                    id: 'snowCopy6',
+                    type: 'image',
+                    rect: ['-114px', '529px', '114px', '273px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow.png', '0px', '0px']
+                },
+                {
+                    id: 'snowCopy5',
+                    type: 'image',
+                    rect: ['-7px', '802px', '114px', '273px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow.png', '0px', '0px']
+                },
+                {
+                    id: 'snowCopy4',
+                    type: 'image',
+                    rect: ['-114px', '802px', '114px', '273px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow.png', '0px', '0px']
+                },
+                {
+                    id: 'snowCopy15',
+                    type: 'image',
+                    rect: ['-7px', '1075px', '114px', '273px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow.png', '0px', '0px']
+                },
+                {
+                    id: 'snowCopy14',
+                    type: 'image',
+                    rect: ['-114px', '1075px', '114px', '273px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow.png', '0px', '0px']
+                },
+                {
+                    id: 'snowCopy13',
+                    type: 'image',
+                    rect: ['-7px', '1348px', '114px', '273px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow.png', '0px', '0px']
+                },
+                {
+                    id: 'snowCopy12',
+                    type: 'image',
+                    rect: ['-114px', '1348px', '114px', '273px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow.png', '0px', '0px']
+                },
+                {
+                    id: 'snowCopy11',
+                    type: 'image',
+                    rect: ['-7px', '1621px', '114px', '273px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow.png', '0px', '0px']
+                },
+                {
+                    id: 'snowCopy10',
+                    type: 'image',
+                    rect: ['-114px', '1621px', '114px', '273px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow.png', '0px', '0px']
+                },
+                {
+                    id: 'snowCopy9',
+                    type: 'image',
+                    rect: ['-7px', '1894px', '114px', '273px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow.png', '0px', '0px']
+                },
+                {
+                    id: 'snowCopy8',
+                    type: 'image',
+                    rect: ['-114px', '1894px', '114px', '273px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow.png', '0px', '0px']
+                }
+            ],
+            symbolInstances: [
+            ]
+        },
+    states: {
+        "Base State": {
+            "${_snowCopy3}": [
+                ["style", "top", '256px'],
+                ["style", "height", '273px'],
+                ["style", "left", '-7px'],
+                ["style", "width", '114px']
+            ],
+            "${_snowCopy}": [
+                ["style", "top", '-17px'],
+                ["style", "height", '273px'],
+                ["style", "left", '-114px'],
+                ["style", "width", '114px']
+            ],
+            "${_snow}": [
+                ["style", "height", '273px'],
+                ["style", "top", '-17px'],
+                ["style", "left", '-7px'],
+                ["style", "width", '114px']
+            ],
+            "${_snowCopy11}": [
+                ["style", "height", '273px'],
+                ["style", "top", '1621px'],
+                ["style", "left", '-7px'],
+                ["style", "width", '114px']
+            ],
+            "${symbolSelector}": [
+                ["style", "height", '256px'],
+                ["style", "width", '107px']
+            ],
+            "${_snowCopy13}": [
+                ["style", "height", '273px'],
+                ["style", "top", '1348px'],
+                ["style", "left", '-7px'],
+                ["style", "width", '114px']
+            ],
+            "${_snowCopy10}": [
+                ["style", "top", '1621px'],
+                ["style", "height", '273px'],
+                ["style", "left", '-114px'],
+                ["style", "width", '114px']
+            ],
+            "${_snowCopy12}": [
+                ["style", "top", '1348px'],
+                ["style", "height", '273px'],
+                ["style", "left", '-114px'],
+                ["style", "width", '114px']
+            ],
+            "${_snowCopy8}": [
+                ["style", "height", '273px'],
+                ["style", "top", '1894px'],
+                ["style", "left", '-114px'],
+                ["style", "width", '114px']
+            ],
+            "${_snowCopy2}": [
+                ["style", "height", '273px'],
+                ["style", "top", '256px'],
+                ["style", "left", '-114px'],
+                ["style", "width", '114px']
+            ],
+            "${_snowCopy15}": [
+                ["style", "top", '1075px'],
+                ["style", "height", '273px'],
+                ["style", "left", '-7px'],
+                ["style", "width", '114px']
+            ],
+            "${_snowCopy6}": [
+                ["style", "height", '273px'],
+                ["style", "top", '529px'],
+                ["style", "left", '-114px'],
+                ["style", "width", '114px']
+            ],
+            "${_snowCopy14}": [
+                ["style", "height", '273px'],
+                ["style", "top", '1075px'],
+                ["style", "left", '-114px'],
+                ["style", "width", '114px']
+            ],
+            "${_snowCopy5}": [
+                ["style", "height", '273px'],
+                ["style", "top", '802px'],
+                ["style", "left", '-7px'],
+                ["style", "width", '114px']
+            ],
+            "${_snowCopy4}": [
+                ["style", "top", '802px'],
+                ["style", "height", '273px'],
+                ["style", "left", '-114px'],
+                ["style", "width", '114px']
+            ],
+            "${_snowCopy9}": [
+                ["style", "top", '1894px'],
+                ["style", "height", '273px'],
+                ["style", "left", '-7px'],
+                ["style", "width", '114px']
+            ],
+            "${_snowCopy7}": [
+                ["style", "top", '529px'],
+                ["style", "height", '273px'],
+                ["style", "left", '-7px'],
+                ["style", "width", '114px']
+            ]
+        }
+    },
+    timelines: {
+        "Default Timeline": {
+            fromState: "Base State",
+            toState: "",
+            duration: 0,
+            autoPlay: false,
+            timeline: [
+            ]
+        }
+    }
+},
+"snow_blour": {
+    version: "4.0.0",
+    minimumCompatibleVersion: "4.0.0",
+    build: "4.0.0.359",
+    baseState: "Base State",
+    scaleToFit: "none",
+    centerStage: "none",
+    initialState: "Base State",
+    gpuAccelerate: false,
+    resizeInstances: false,
+    content: {
+            dom: [
+                {
+                    id: 'snow_blour',
+                    type: 'image',
+                    rect: ['0px', '0px', '107px', '256px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow_blour.png', '0px', '0px']
+                },
+                {
+                    id: 'snow_blourCopy',
+                    type: 'image',
+                    rect: ['-107px', '0px', '107px', '256px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow_blour.png', '0px', '0px']
+                },
+                {
+                    id: 'snow_blourCopy3',
+                    type: 'image',
+                    rect: ['0px', '256px', '107px', '256px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow_blour.png', '0px', '0px']
+                },
+                {
+                    id: 'snow_blourCopy2',
+                    type: 'image',
+                    rect: ['-107px', '256px', '107px', '256px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow_blour.png', '0px', '0px']
+                },
+                {
+                    id: 'snow_blourCopy7',
+                    type: 'image',
+                    rect: ['0px', '512px', '107px', '256px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow_blour.png', '0px', '0px']
+                },
+                {
+                    id: 'snow_blourCopy6',
+                    type: 'image',
+                    rect: ['-107px', '512px', '107px', '256px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow_blour.png', '0px', '0px']
+                },
+                {
+                    id: 'snow_blourCopy5',
+                    type: 'image',
+                    rect: ['0px', '768px', '107px', '256px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow_blour.png', '0px', '0px']
+                },
+                {
+                    id: 'snow_blourCopy4',
+                    type: 'image',
+                    rect: ['-107px', '768px', '107px', '256px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow_blour.png', '0px', '0px']
+                },
+                {
+                    id: 'snow_blourCopy15',
+                    type: 'image',
+                    rect: ['0px', '1024px', '107px', '256px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow_blour.png', '0px', '0px']
+                },
+                {
+                    id: 'snow_blourCopy14',
+                    type: 'image',
+                    rect: ['-107px', '1024px', '107px', '256px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow_blour.png', '0px', '0px']
+                },
+                {
+                    id: 'snow_blourCopy13',
+                    type: 'image',
+                    rect: ['0px', '1280px', '107px', '256px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow_blour.png', '0px', '0px']
+                },
+                {
+                    id: 'snow_blourCopy12',
+                    type: 'image',
+                    rect: ['-107px', '1280px', '107px', '256px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow_blour.png', '0px', '0px']
+                },
+                {
+                    id: 'snow_blourCopy11',
+                    type: 'image',
+                    rect: ['0px', '1536px', '107px', '256px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow_blour.png', '0px', '0px']
+                },
+                {
+                    id: 'snow_blourCopy10',
+                    type: 'image',
+                    rect: ['-107px', '1536px', '107px', '256px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow_blour.png', '0px', '0px']
+                },
+                {
+                    id: 'snow_blourCopy9',
+                    type: 'image',
+                    rect: ['0px', '1792px', '107px', '256px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow_blour.png', '0px', '0px']
+                },
+                {
+                    id: 'snow_blourCopy8',
+                    type: 'image',
+                    rect: ['-107px', '1792px', '107px', '256px', 'auto', 'auto'],
+                    fill: ['rgba(0,0,0,0)', 'images/fx/snow_blour.png', '0px', '0px']
+                }
+            ],
+            symbolInstances: [
+            ]
+        },
+    states: {
+        "Base State": {
+            "${_snow_blourCopy8}": [
+                ["style", "height", '256px'],
+                ["style", "top", '1792px'],
+                ["style", "left", '-107px'],
+                ["style", "width", '107px']
+            ],
+            "${_snow_blourCopy6}": [
+                ["style", "height", '256px'],
+                ["style", "top", '512px'],
+                ["style", "left", '-107px'],
+                ["style", "width", '107px']
+            ],
+            "${_snow_blourCopy13}": [
+                ["style", "height", '256px'],
+                ["style", "top", '1280px'],
+                ["style", "left", '0px'],
+                ["style", "width", '107px']
+            ],
+            "${_snow_blourCopy2}": [
+                ["style", "height", '256px'],
+                ["style", "top", '256px'],
+                ["style", "left", '-107px'],
+                ["style", "width", '107px']
+            ],
+            "${symbolSelector}": [
+                ["style", "height", '256px'],
+                ["style", "width", '107px']
+            ],
+            "${_snow_blourCopy4}": [
+                ["style", "top", '768px'],
+                ["style", "height", '256px'],
+                ["style", "left", '-107px'],
+                ["style", "width", '107px']
+            ],
+            "${_snow_blourCopy15}": [
+                ["style", "top", '1024px'],
+                ["style", "height", '256px'],
+                ["style", "left", '0px'],
+                ["style", "width", '107px']
+            ],
+            "${_snow_blourCopy9}": [
+                ["style", "top", '1792px'],
+                ["style", "height", '256px'],
+                ["style", "left", '0px'],
+                ["style", "width", '107px']
+            ],
+            "${_snow_blourCopy7}": [
+                ["style", "top", '512px'],
+                ["style", "height", '256px'],
+                ["style", "left", '0px'],
+                ["style", "width", '107px']
+            ],
+            "${_snow_blourCopy}": [
+                ["style", "top", '0px'],
+                ["style", "height", '256px'],
+                ["style", "left", '-107px'],
+                ["style", "width", '107px']
+            ],
+            "${_snow_blourCopy10}": [
+                ["style", "top", '1536px'],
+                ["style", "height", '256px'],
+                ["style", "left", '-107px'],
+                ["style", "width", '107px']
+            ],
+            "${_snow_blour}": [
+                ["style", "height", '256px'],
+                ["style", "top", '0px'],
+                ["style", "left", '0px'],
+                ["style", "width", '107px']
+            ],
+            "${_snow_blourCopy5}": [
+                ["style", "height", '256px'],
+                ["style", "top", '768px'],
+                ["style", "left", '0px'],
+                ["style", "width", '107px']
+            ],
+            "${_snow_blourCopy14}": [
+                ["style", "height", '256px'],
+                ["style", "top", '1024px'],
+                ["style", "left", '-107px'],
+                ["style", "width", '107px']
+            ],
+            "${_snow_blourCopy3}": [
+                ["style", "top", '256px'],
+                ["style", "height", '256px'],
+                ["style", "left", '0px'],
+                ["style", "width", '107px']
+            ],
+            "${_snow_blourCopy12}": [
+                ["style", "top", '1280px'],
+                ["style", "height", '256px'],
+                ["style", "left", '-107px'],
+                ["style", "width", '107px']
+            ],
+            "${_snow_blourCopy11}": [
+                ["style", "height", '256px'],
+                ["style", "top", '1536px'],
+                ["style", "left", '0px'],
+                ["style", "width", '107px']
+            ]
+        }
+    },
+    timelines: {
+        "Default Timeline": {
+            fromState: "Base State",
+            toState: "",
+            duration: 0,
+            autoPlay: false,
+            timeline: [
+            ]
         }
     }
 }

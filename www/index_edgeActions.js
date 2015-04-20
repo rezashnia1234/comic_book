@@ -150,6 +150,7 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
          sym.$("#Stage").data("run_next_animation",false);
          sym.$("#Stage").data("playing_animation",false);
          
+         
          sym.reset_all_page_1 = function()
          {
          
@@ -157,6 +158,11 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
          	// sym.stop(500); or sym.stop("myLabel");
          
          	sym.getSymbol("page_1th").stop(0);
+         
+         	sym.getSymbol("page_1th").getSymbol("F01").$("SnowAudio")[0].pause();
+         	sym.getSymbol("page_1th").getSymbol("P01F05").$("rahraftan")[0].pause();
+         
+         	// Mute all audio tracks in the composition. Set muted to false to toggle off 
          
          	//sym.getSymbol("page_1th").getSymbol("F01").getSymbol("snow_motionCopy").stop(0);
          	//sym.getSymbol("page_1th").getSymbol("F01").getSymbol("snow_motion").stop(0);
@@ -178,6 +184,8 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
          	sym.getSymbol("page_1th").getSymbol("F06_mother3").getSymbol("p01f06backofsarbaz").stop(0);
          
          }
+         
+         //sym.getComposition().getStage().reset_all_page_1();
 
       });
       //Edge binding end
@@ -587,10 +595,16 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 1000, function(sym, e) {
          //alert("2");
          //sym.getSymbol("snow2").getSymbol("snow_2").play();
-         sym.getSymbol("F01").getSymbol("snow_motion").getSymbol("snow_23").play(0);
-         sym.getSymbol("F01").getSymbol("snow_motion").play(0);
-         sym.getSymbol("F01").getSymbol("snow_motionCopy").play(0);
-         sym.getSymbol("F01").getSymbol("snow_motionCopy2").play(0);
+         
+         
+         sym.getSymbol("F01").play(0);
+         sym.getSymbol("F01").$("SnowAudio")[0].play();
+         sym.getSymbol("F01").$("SnowAudio")[0].currentTime = 6;
+         
+         //sym.getSymbol("F01").getSymbol("snow_motion").getSymbol("snow_23").play(0);
+         //sym.getSymbol("F01").getSymbol("snow_motion").play(0);
+         //sym.getSymbol("F01").getSymbol("snow_motionCopy").play(0);
+         //sym.getSymbol("F01").getSymbol("snow_motionCopy2").play(0);
          
 
       });
@@ -623,7 +637,7 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 10500, function(sym, e) {
          sym.getComposition().getStage().getSymbol("page_1th").stop();
          
-         sym.getComposition().getStage().getSymbol("page_1th").getSymbol("P01F05").play(0);
+         //sym.getComposition().getStage().getSymbol("page_1th").getSymbol("P01F05").play(0);
          
 
       });
@@ -632,6 +646,27 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 7080, function(sym, e) {
          sym.getComposition().getStage().getSymbol("page_1th").getSymbol("P01F03").play(0);
 
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 4121, function(sym, e) {
+         
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 9110, function(sym, e) {
+         sym.getComposition().getStage().getSymbol("page_1th").getSymbol("P01F05").play(0);
+         
+         // Play an audio track 
+         sym.getSymbol("P01F05").$("rahraftan")[0].play();
+         
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 11000, function(sym, e) {
+         // insert code here
       });
       //Edge binding end
 
@@ -837,5 +872,21 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
    
    })("P01F05");
    //Edge symbol end:'P01F05'
+
+   //=========================================================
+   
+   //Edge symbol: 'snow_big'
+   (function(symbolName) {   
+   
+   })("snow_big");
+   //Edge symbol end:'snow_big'
+
+   //=========================================================
+   
+   //Edge symbol: 'snow_blour'
+   (function(symbolName) {   
+   
+   })("snow_blour");
+   //Edge symbol end:'snow_blour'
 
 })(jQuery, AdobeEdge, "smgroup-786");
