@@ -161,7 +161,8 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
          
          	sym.getSymbol("page_1th").getSymbol("F01").$("SnowAudio")[0].pause();
          	sym.getSymbol("page_1th").getSymbol("P01F05").$("rahraftan")[0].pause();
-         
+         	sym.getSymbol("page_1th").getSymbol("P01F03").$("electronic")[0].pause();
+         	
          	// Mute all audio tracks in the composition. Set muted to false to toggle off 
          
          	//sym.getSymbol("page_1th").getSymbol("F01").getSymbol("snow_motionCopy").stop(0);
@@ -645,6 +646,9 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
 
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 7080, function(sym, e) {
          sym.getComposition().getStage().getSymbol("page_1th").getSymbol("P01F03").play(0);
+         
+         sym.getSymbol("P01F03").$("electronic")[0].play();
+         
 
       });
       //Edge binding end
