@@ -49,6 +49,8 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
          // insert code here
          sym.stop();
          
+         sym.$("#Stage").data("is_it_at_start",true);
+         
          // Play an audio track 
          sym.getSymbol("p01f01").$("SnowAudio2")[0].play();
          
@@ -368,6 +370,30 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
 
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
          // insert code here
+         sym.$("#Stage").data("is_it_at_start",true);
+
+      });
+      //Edge binding end
+
+      Symbol.bindElementAction(compId, symbolName, "${_Action}", "swipeleft", function(sym, e) {
+         // insert code to be run when a swipeleft event occurs on an element
+         if(!sym.$("#Stage").data("is_it_at_start"))
+         	sym.playReverse();
+
+      });
+      //Edge binding end
+
+      Symbol.bindElementAction(compId, symbolName, "${_Action}", "swiperight", function(sym, e) {
+         // insert code to be run when a swiperight event occurs on an element
+         sym.play();
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 1160, function(sym, e) {
+         // insert code here
+         sym.$("#Stage").data("is_it_at_start",false);
+
       });
       //Edge binding end
 
