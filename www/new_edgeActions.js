@@ -178,6 +178,24 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
          	sym.getSymbol("p01f04").stop(0);
          	sym.getSymbol("p01f05").stop(0);
          	sym.getSymbol("p01f06").stop(0);
+         
+         	sym.getSymbol("p04f01").stop(0);
+         	sym.getSymbol("p04f02").stop(0);
+         	sym.getSymbol("p04f03").stop(0);
+         	sym.getSymbol("p04f04").stop(0);
+         	sym.getSymbol("p04f05").stop(0);
+         	sym.getSymbol("p04f06").stop(0);
+         	
+         	sym.getSymbol("p03f01").stop(0);
+         	sym.getSymbol("p03f02").stop(0);
+         	sym.getSymbol("p03f03").stop(0);
+         	sym.getSymbol("p02f01").stop(0);
+         	sym.getSymbol("p02f02").stop(0);
+         	sym.getSymbol("p02f03").stop(0);
+         	sym.getSymbol("p02f04").stop(0);
+         	sym.getSymbol("p02f05").stop(0);
+         	
+         	
          }
 
       });
