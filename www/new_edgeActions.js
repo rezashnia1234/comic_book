@@ -48,7 +48,6 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 1000, function(sym, e) {
          // insert code here
          sym.stop();
-         
          sym.$("#Stage").data("is_it_at_start",true);
          
          // Play an audio track 
@@ -57,13 +56,10 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
          // Jump to a playback time (in seconds) 
          sym.getSymbol("p01f01").$("SnowAudio2")[0].currentTime = 6;
          
-         
          // Play the timeline at a label or specific time. For example:
          // sym.play(500); or sym.play("myLabel");
          sym.getSymbol("p01f01").play(0);
          
-         sym.$("dark")[0].currentTime = 55;
-         sym.$("dark")[0].play();
 
       });
       //Edge binding end
@@ -105,8 +101,8 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
          
          sym.stop();
          
-         
          sym.getSymbol("p01f04").play(0);
+         
          
          
          
@@ -169,7 +165,6 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
       
 
       Symbol.bindSymbolAction(compId, symbolName, "creationComplete", function(sym, e) {
-         
          sym.reset_all_page_1 = function()
          {
          	sym.getSymbol("p01f01").stop(0);
@@ -185,7 +180,7 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
          	sym.getSymbol("p04f04").stop(0);
          	sym.getSymbol("p04f05").stop(0);
          	sym.getSymbol("p04f06").stop(0);
-         	
+         
          	sym.getSymbol("p03f01").stop(0);
          	sym.getSymbol("p03f02").stop(0);
          	sym.getSymbol("p03f03").stop(0);
@@ -194,8 +189,8 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
          	sym.getSymbol("p02f03").stop(0);
          	sym.getSymbol("p02f04").stop(0);
          	sym.getSymbol("p02f05").stop(0);
-         	
-         	
+         
+         
          }
 
       });
@@ -386,30 +381,33 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
       });
       //Edge binding end
 
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
-         // insert code here
-         sym.$("#Stage").data("is_it_at_start",true);
-
-      });
-      //Edge binding end
-
       Symbol.bindElementAction(compId, symbolName, "${_Action}", "swipeleft", function(sym, e) {
-         // insert code to be run when a swipeleft event occurs on an element
          if(!sym.$("#Stage").data("is_it_at_start"))
+         {
+         	sym.getComposition().getStage().reset_all_page_1();
          	sym.playReverse();
+         }
 
       });
       //Edge binding end
 
       Symbol.bindElementAction(compId, symbolName, "${_Action}", "swiperight", function(sym, e) {
-         // insert code to be run when a swiperight event occurs on an element
+         sym.getComposition().getStage().reset_all_page_1();
          sym.play();
+         
 
       });
       //Edge binding end
 
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 1160, function(sym, e) {
-         // insert code here
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
+         sym.$("#Stage").data("is_it_at_start",true);
+         sym.$("dark")[0].currentTime = 55;
+         sym.$("dark")[0].play();
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 1289, function(sym, e) {
          sym.$("#Stage").data("is_it_at_start",false);
 
       });
