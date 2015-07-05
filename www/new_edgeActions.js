@@ -333,6 +333,10 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 5500, function(sym, e) {
          // insert code here
          sym.getSymbol("p01f06").play(0);
+         
+         // Pause an audio track 
+         sym.getSymbol("p01f05").$("rahraftan")[0].pause();
+         
 
       });
       //Edge binding end
